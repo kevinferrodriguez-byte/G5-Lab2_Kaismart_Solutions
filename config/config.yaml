@@ -1,0 +1,35 @@
+# =============================================================================
+# Configuración del pipeline ETL - Kaismart Solutions S.A.S.
+# =============================================================================
+
+proyecto:
+  nombre: "Laboratorio práctico de ETL - Kaismart Solutions S.A.S."
+  universidad: "Universidad Autónoma de Occidente"
+  docente: "Juan Manuel Núñez Velasco"
+  autores:
+    - "Kevin Rodriguez"         
+    - "Brandon Sanchez"
+    - "Mauricio Mozo"
+    - "Juan Leon"
+
+fuentes:
+  mysql:
+    tabla: "ventas"              # Fuente 1: sistema comercial
+  excel:
+    ruta: "data/kaismart_eventos_logisticos.xlsx"   # Fuente 2: sistema logístico
+    hoja: "eventos_logisticos"
+
+# Carpetas de la arquitectura Medallion
+rutas:
+  bronze: "data/bronze"          # datos crudos, tal como llegan de la fuente
+  silver: "data/silver"          # datos limpios y estandarizados
+  gold: "data/gold"              # datos integrados listos para análisis
+  log: "logs/etl.log"
+
+gold:
+  base_datos_sqlite: "data/gold/kaismart_gold.db"
+
+# Orquestador - con librería schedule
+orquestador:
+  intervalo_minutos: 60          # Cada cuánto se ejecuta el pipeline
+  ejecutar_al_iniciar: true      # Correr apenas inicia el orquestador

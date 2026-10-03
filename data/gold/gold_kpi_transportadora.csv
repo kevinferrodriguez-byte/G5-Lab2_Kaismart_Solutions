@@ -1,0 +1,6 @@
+﻿transportadora,pedidos,ventas_netas,ticket_promedio,costo_envio_promedio,horas_promedio_entrega,pct_entrega_a_tiempo,incidencias,calificacion_promedio,incidencias_por_100_pedidos
+ENVIA,1059,681299760.0,643342.55,13509.45,35.96,83.54,111,4.12,10.48
+COORDINADORA,1027,636657380.0,619919.55,13701.31,35.98,83.04,100,4.13,9.74
+INTER RAPIDÍSIMO,1007,652745345.0,648207.89,13721.29,36.53,82.53,103,4.1,10.23
+TCC,957,577705020.0,603662.51,13588.9,35.92,82.13,100,4.08,10.45
+SERVIENTREGA,950,620067575.0,652702.71,13531.32,35.87,83.02,97,4.03,10.21

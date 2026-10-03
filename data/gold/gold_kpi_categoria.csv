@@ -1,0 +1,6 @@
+﻿categoria,pedidos,ventas_netas,ticket_promedio,costo_envio_promedio,horas_promedio_entrega,pct_entrega_a_tiempo,incidencias,calificacion_promedio,incidencias_por_100_pedidos
+TECNOLOGÍA,1366,764924075.0,559973.7,13547.87,36.48,81.88,148,4.11,10.83
+ELECTRODOMÉSTICOS,1104,442194260.0,400538.28,13766.83,35.42,84.11,108,4.09,9.78
+HOGAR,935,464110855.0,496375.25,13669.7,36.37,82.21,88,4.1,9.41
+DEPORTES,812,863788915.0,1063779.45,13482.92,35.98,83.33,81,3.99,9.98
+OFICINA,783,633456975.0,809012.74,13563.42,35.9,83.14,86,4.18,10.98

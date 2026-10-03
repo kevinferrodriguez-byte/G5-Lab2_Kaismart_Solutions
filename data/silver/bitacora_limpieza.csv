@@ -1,0 +1,37 @@
+﻿fuente,paso,decision,filas_afectadas
+ventas,Duplicados,Eliminar filas completamente duplicadas,0
+ventas,Duplicados,Conservar un solo registro por id_venta,0
+ventas,Duplicados,Conservar un solo registro por pedido_id,0
+ventas,Tipos de datos,Monetarias y descuento_pct de Decimal(object) a float; cantidad y calificacion_cliente a Int64; fecha_venta a datetime,5000
+ventas,Estandarización,"Texto en MAYÚSCULAS y sin espacios extra en ['ciudad', 'canal', 'categoria', 'producto', 'medio_pago', 'pedido_id', 'id_cliente', 'id_tienda']",5000
+ventas,Nulos id_tienda,Canal digital sin tienda -> 'NO APLICA',3501
+ventas,Nulos id_tienda,Tienda física sin id_tienda -> 'NO INFORMADO',0
+ventas,Nulos calificacion_cliente,Se mantiene el nulo (cliente no calificó) y se crea 'tiene_calificacion',2172
+ventas,Validación,Registros que incumplen: valor_bruto = cantidad x precio_unitario,0
+ventas,Validación,Registros que incumplen: valor_descuento = valor_bruto x descuento_pct / 100,0
+ventas,Validación,Registros que incumplen: valor_neto = valor_bruto - valor_descuento,0
+ventas,Variables derivadas,Se crea 'mes_venta' (AAAA-MM),5000
+logistica,Duplicados,Eliminar filas completamente duplicadas,99
+logistica,Duplicados,evento_id repetido: conservar la fila más completa,1
+logistica,Tipos de datos,fecha_evento: texto -> datetime (valores con formato inválido: 0),49900
+logistica,Tipos de datos,fecha_prometida_entrega: texto -> datetime (valores con formato inválido: 0),49900
+logistica,Estandarización,"Texto en MAYÚSCULAS en ['pedido_id', 'estado_evento', 'centro_logistico', 'ciudad_destino', 'transportadora', 'numero_guia', 'incidencia']",49900
+logistica,Validación,Eventos con estado fuera del catálogo de 10 etapas,0
+logistica,Nulos centro_logistico,Recuperado desde otros eventos del mismo pedido,89
+logistica,Nulos ciudad_destino,Recuperado desde otros eventos del mismo pedido,45
+logistica,Nulos fecha_prometida_entrega,Recuperado desde otros eventos del mismo pedido,55
+logistica,Nulos centro_logistico,Sin información en todo el pedido -> 'NO INFORMADO',0
+logistica,Nulos ciudad_destino,Sin información en todo el pedido -> 'NO INFORMADO',0
+logistica,Nulos transportadora,Post-despacho: recuperado desde otros eventos del mismo pedido,80
+logistica,Nulos numero_guia,Post-despacho: recuperado desde otros eventos del mismo pedido,60
+logistica,Nulos transportadora,Pre-despacho (nulo normal) -> 'NO APLICA',29944
+logistica,Nulos transportadora,Post-despacho sin dato en todo el pedido -> 'NO INFORMADO',0
+logistica,Nulos numero_guia,Pre-despacho: se MANTIENE nulo (la guía aún no existe),29944
+logistica,Nulos fecha_evento,Reconstruida con evento vecino +/- tiempo_etapa_horas,65
+logistica,Nulos fecha_evento,Sin evento vecino con fecha: se mantiene nulo,0
+logistica,Nulos tiempo_etapa_horas,PEDIDO RECIBIDO: se mantiene nulo (no hay etapa previa),4991
+logistica,Nulos tiempo_etapa_horas,Otras etapas: recalculado con diferencia de fechas,0
+logistica,Nulos incidencia,Nulo = no hubo incidencia -> 'SIN INCIDENCIA',49389
+logistica,Nulos observacion,Nulo = no se registró comentario -> 'Sin observación',48183
+logistica,Validación,Pedidos con menos de 10 etapas registradas (no se crean eventos),98
+logistica,Validación,Pedidos con más de un costo_envio distinto,0

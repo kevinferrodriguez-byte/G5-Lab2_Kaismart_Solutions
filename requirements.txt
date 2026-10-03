@@ -1,0 +1,9 @@
+pandas>=2.2            # manipulación de DataFrames
+openpyxl>=3.1          # motor para leer archivos .xlsx
+mysql-connector-python>=9.0   # conexión a MySQL (librería usada en el anexo del laboratorio)
+python-dotenv>=1.0     # leer credenciales desde .env
+PyYAML>=6.0            # leer config/config.yaml
+schedule>=1.2          # orquestador del pipeline (Parte 8)
+matplotlib>=3.8        # gráficas del EDA en el notebook
+pytest>=8.0            # pruebas unitarias
+ipykernel>=6.0         # ejecutar el notebook
